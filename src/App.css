@@ -1,6 +1,3 @@
-.App {
-  text-align: center;
-}
 
 .App-logo {
   height: 40vmin;
@@ -34,4 +31,11 @@
   to {
     transform: rotate(360deg);
   }
+}
+
+.left-section {
+  background-color: #8b8c8d;
+  height: 84vh;
+  width: 40%;
+  margin: 10px;
 }

@@ -1,6 +1,4 @@
-
-export default function TodoApp() {
-
+export default function NavBar() {
 
   return (
     <div className="navbar">
