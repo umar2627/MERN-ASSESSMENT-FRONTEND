@@ -9,20 +9,24 @@ function App() {
   const [editObj, setEditObj] = useState({});
 
   const onAddHandler = async (newEntry) => {
-    const res = await fetch(`http://localhost:5000/addtodo`, {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify(newEntry),
-    });
+    try {
+      const res = await fetch(`http://localhost:5000/addtodo`, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(newEntry),
+      });
 
-    const data = await res.json();
+      const data = await res.json();
 
-    if (data.status === "success") {
-      let todo = data.data.saveTodo;
-      setEntries(entries.concat(todo));
-    } else {
+      if (data.status === "success") {
+        let todo = data.data.saveTodo;
+        setEntries(entries.concat(todo));
+      } else {
+        alert("Error adding data");
+      }
+    } catch (error) {
       alert("Error adding data");
     }
   };
@@ -80,18 +84,22 @@ function App() {
   };
 
   const getAllTodos = async () => {
-    const res = await fetch(`http://localhost:5000/fetchalltodos`, {
-      method: "GET",
-      headers: {
-        "Content-Type": "application/json",
-      },
-    });
+    try {
+      const res = await fetch(`http://localhost:5000/fetchalltodos`, {
+        method: "GET",
+        headers: {
+          "Content-Type": "application/json",
+        },
+      });
 
-    const data = await res.json();
+      const data = await res.json();
 
-    if (data.status === "success") {
-      setEntries(data.data.todos);
-    } else {
+      if (data.status === "success") {
+        setEntries(data.data.todos);
+      } else {
+        alert("Error fetching data");
+      }
+    } catch (error) {
       alert("Error fetching data");
     }
   };
