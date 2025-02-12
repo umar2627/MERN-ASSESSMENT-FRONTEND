@@ -10,13 +10,13 @@ export default function ReadData({
         <p className="data">No data available</p>
       ) : (
         entries.map((entry, index) => (
-          <div key={index} className="data">
+          <div key={entry._id} className="data">
             <span>Title: {entry.title}</span>
             <p>Desc: {entry.desc}</p>
-            <button onClick={() => editButtonHandler(entry, index)}>
+            <button onClick={() => editButtonHandler(entry, entry._id)}>
               Edit
             </button>
-            <button onClick={() => onDeleteHandler(index)}>Delete</button>
+            <button onClick={() => onDeleteHandler(entry._id)}>Delete</button>
           </div>
         ))
       )}
