@@ -15,8 +15,18 @@
 label {
     padding: 10px;
 }
-button {
-    FONT-SIZE: large;
+.button-add {
+    font-size: large;
     padding: 10px;
     margin: 60px;
+}
+
+.data {
+    width: 300px;
+    height: auto;
+    border: 1px solid #000000;
+    color: white;
+    padding: 5px;
+    margin: 5px 10px;
+    font-size: small;
 }

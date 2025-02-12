@@ -33,9 +33,19 @@
   }
 }
 
+.body {
+display: flex;
+}
+
 .left-section {
   background-color: #8b8c8d;
   height: 84vh;
   width: 40%;
+  margin: 10px;
+}
+.right-section {
+  background-color: #8b8c8d;
+  height: auto;
+  width: auto;
   margin: 10px;
 }
